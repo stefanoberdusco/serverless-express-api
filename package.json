@@ -1,20 +1,24 @@
 {
   "name": "serverless-express",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "boilerplate for an express based server api running on lambda",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon index.local.js",
-    "test": "jest",
+    "start": "nodemon src/index.local.js",
+    "test": "eslint . && jest",
+    "format": "eslint --fix \"src/**/*.*\"",
     "deploy": "source ./.env && serverless deploy"
   },
-  "author": "",
+  "author": "stefanoberdusco",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "serverless-http": "^2.3.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
     "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
@@ -27,5 +31,31 @@
     "testEnvironment": "node",
     "collectCoverage": true,
     "coverageDirectory": ".coverage"
+  },
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "rules": {}
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "excludeFiles": [
+      "package.json"
+    ]
   }
 }

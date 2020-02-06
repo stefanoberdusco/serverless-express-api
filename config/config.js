@@ -1,4 +1,4 @@
 module.exports = {
   name: 'serverless-express',
-  port: 3000
+  port: 3000,
 };
