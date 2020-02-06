@@ -1,2 +1,3 @@
-# serverless-express
-Boilerplate for express server running on lambda
+# serverless-express-api
+
+boilerplate for an express based server api running on lambda
