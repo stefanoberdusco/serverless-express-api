@@ -1,7 +1,7 @@
 const express = require('express');
-const api = require('./routes/api');
+const routes = require('./routes');
 
 const app = express();
-app.use('/api', api);
+app.use('/api', routes.api);
 
 module.exports = app;
